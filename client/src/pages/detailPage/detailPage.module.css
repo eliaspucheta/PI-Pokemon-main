@@ -1,0 +1,6 @@
+.container {
+  width: 906px;
+  user-select: none;
+  background: rgba(230, 230, 230, 0.438);
+  border-radius: 5px;
+}

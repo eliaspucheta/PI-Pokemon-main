@@ -1,0 +1,69 @@
+.container {
+  background: white;
+  border-radius: 5px;
+  width: 905px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  gap: 20px;
+}
+
+.infoContainer {
+  display: flex;
+  width: 720px;
+  justify-content: space-around;
+}
+
+.prevDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.btnsContainer {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.errors {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  color: #e63946;
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+.btnsContainer button {
+  width: 100px;
+  border: none;
+  outline: none;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+  transition: all 0.1s linear;
+  border-radius: 2px;
+}
+
+.btnsContainer button:hover {
+  transform: scale(0.9);
+  box-shadow: inset 4px 3px 7px 0 #000;
+}
+
+#createBtn {
+  background: #a8dadc;
+}
+
+#createBtn:disabled {
+  cursor: not-allowed;
+}
+#createBtn:disabled{
+  background: #ccc;
+}
+
+#resetBtn {
+  background-color: #e63946;
+}

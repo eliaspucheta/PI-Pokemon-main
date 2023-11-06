@@ -11,7 +11,6 @@ router.get('/', async (req, res) => {
 
 
               const id = req.params
-             console.log(req.params);
         
              if(id) return res.status(200).send(id)
              else return 'no se ha encontrado ningun id'

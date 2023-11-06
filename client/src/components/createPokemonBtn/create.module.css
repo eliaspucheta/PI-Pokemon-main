@@ -1,0 +1,20 @@
+.create {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-decoration: none;
+  background-color: #fb8500;
+  color: white;
+  height: 30px;
+  width:150px ;
+  font-size: 16px;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+ .create:hover {
+  background-color: #ffb703;
+}

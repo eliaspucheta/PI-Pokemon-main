@@ -1,0 +1,207 @@
+.typesContainer {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.typeSpan {
+  font-weight: semibold;
+  border-radius: 3px;
+  width: 73.14px;
+  font-size: 11px;
+  font-family: 'Roboto', sans-serif;
+  height: 18px;
+  text-align: center;
+  line-height: 18px;
+}
+.grass {
+  background-color: #9bcc50;
+}
+.normal {
+  background-color: #a4acaf;
+}
+.fighting {
+  background-color: #d56723;
+  color: white;
+}
+
+.flying {
+  background: linear-gradient(180deg, #3dc7ef 50%, #bdb9b8 50%);
+  background-color: #3dc7ef;
+}
+
+.poison {
+  background-color: #b97fc9;
+  color: white;
+}
+
+.ground {
+  background:linear-gradient(180deg, #f7de3f 50%, #ab9842 50%);
+  background-color: #f7de3f;
+}
+
+.rock {
+  background-color: #a38c21;
+}
+
+.bug {
+  background: #729f3f;
+  color: white;
+}
+
+.ghost {
+  background-color:#7b62a3 ;
+  color: white;
+}
+
+.steel {
+  background-color: #9eb7b8;
+}
+
+.fire {
+  background-color: #fd7d24;
+  color: white;
+}
+
+.water {
+  background: #4592c4;
+  color: white;
+}
+
+.electric {
+  background: #eed535;
+}
+
+.psychic {
+  background: #f366b9;
+  color:white
+}
+
+.ice {
+  background: #51c4e7;
+}
+
+.dragon {
+  background-color: #53a4cf;
+  background: linear-gradient(180deg, #53a4cf 50%, #f16e57 50%);
+  color: white;
+}
+
+.dark {
+  background: #707070;;
+  color:white;
+}
+
+.fairy {
+  background: #fdb9e9;
+}
+
+.unknown {
+  background-color: #a4acaf;
+  
+}
+
+.shadow {
+  background: #707070;;
+color: white;
+}
+
+.pokemonCard {
+  height: 287px;
+  transition: all 0.2s ease-in;
+  user-select: none;
+  position: relative;
+  z-index: 10;
+}
+
+.pokemonCard:hover {
+  transform: scale(1.2);
+  z-index: 100;
+}
+
+.trash {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 20px;
+  background: #ffffff5d;
+  border-radius: 2px;
+}
+
+.pokemonCard h5{
+  font-size: 23px;
+  font-family: 'Lato', sans-serif;
+  word-spacing: 2px;
+}
+
+.pokemonCard img {
+  width: 205.17px;
+  height: 205.17px;
+  object-fit: contain;
+  background: rgb(241, 240, 240);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.infoCont {
+  padding-inline: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.paginationCont {
+  display: flex;
+  gap: 5px;
+  justify-content: center;
+  user-select: none;
+  
+}
+
+
+.paginationCont button {
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  transition: all 0.2s ease-in;
+}
+
+.paginationCont button:hover {
+  transform: scale(1.2);
+}
+
+#prev {
+  border-start-start-radius: 10px;
+}
+#next {
+  border-start-end-radius: 10px;
+}
+
+.paginationCont span {
+  font-weight: bold;
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+}
+
+.disabledPag {
+  display: none;
+}
+
+.reloadBtn {
+  position: absolute;
+  cursor: pointer;
+  background: #4592c4;
+  color: white;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+}
+
+.reloadBtn:hover {
+  transform: scale(1.2);
+}

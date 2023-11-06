@@ -1,0 +1,13 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+}
+
+.container h6 {
+  font-size: 40px;
+  text-transform: uppercase;
+}

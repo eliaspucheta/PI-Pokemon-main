@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  background: rgba(230, 230, 230, 0.438);
+  padding: 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+#gif {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 200px;
+  transition: all 0.4s ease-out;
+}
+
+#gif:hover {
+  bottom: 10px;
+}
+
+@media screen and (max-width: 1365px) {
+  #gif {
+    display: none;
+  }
+}

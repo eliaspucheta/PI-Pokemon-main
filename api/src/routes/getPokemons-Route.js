@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const getPokemons = require('../Controllers/getPokemons-controller')
+const { getAllPokemons, getPokemonDetail } = require("../Controllers/pokemon-controller")
 
 const router = Router();
 
@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     //extraigo el name que llegue por query
     const { name } = req.query;
     //guardamos los pokemones en una variable
-    let pokemons = await getPokemons()
+    let pokemons = await getAllPokemons()
     //en el caso de que llegue uso el valor para buscar el pokemon y retorno el resultado
     if (name){
       let pokemon = pokemons.filter(e => e.name.toLowerCase() === name.toLocaleLowerCase());
@@ -16,34 +16,35 @@ router.get('/', async (req, res) => {
       pokemon.length ? res.status(200).json(pokemon) : res.status(404).json({ Error: 'Pokemon not found!!'})  
     } else {
       //en el caso de que no llegue name por query traigo todos los pokemons disponibles
-      const allPokemons = await getPokemons();
+      const allPokemons = await getAllPokemons();
       //retorno la respuesta del controlador
       return res.status(200).json(allPokemons);
     }   
-  } catch (error) {
-    return res.status(400).json(error.message)
+  } catch (e) {
+    return res.status(400).json(e.message)
   }
   }
 );
 
-router.get('/:id', async (req, res) => {
+router.get('/:name', async (req, res) => {
   //extraigo el id que envian por parametro
-  const { id } = req.params;
+  const id = req.params.name;
   
-  let allPokemons = await getPokemons()
+  let allPokemons = await getPokemonDetail(id)
 
   try {
     //verifico que este parametro tenga valor
-    if(id) {
-      let pokeById = allPokemons.filter(e => e.id == id)
+    if(allPokemons === undefined) {
+      //let pokeById = allPokemons.filter(e => e.id == id)
       //retorno la respuesta
-      pokeById.length ? res.status(200).json(pokeById) : res.status(404).send('Pokemon not found!!')
+      //pokeById.length ? res.status(200).json(pokeById) : res.status(404).send('Pokemon not found!!')
+      return res.status(400).json({ error: 'ID has not been provided!!'})
     }
     //si no recibo el id simplemente retorno un error
-    else return res.status(400).json({ error: 'ID has not been provided!!'})
+    else return res.status(200).json(allPokemons)
     
-  } catch (error) {
-    return res.status(400).json(error.message)
+  } catch (e) {
+    return res.status(400).json(e.message)
   }
 });
 

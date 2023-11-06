@@ -1,20 +1,20 @@
 const { Router } = require("express");
 const { Pokemon, Type } = require("../db");
-const getPokemons = require("../Controllers/getPokemons-controller");
+const { getAllPokemons } = require("../Controllers/pokemon-controller")
 
 const router = Router();
 
 router.post("/pokemons", async (req, res) => {
-  //console.log(req.body);
-  const { name, img, hp, str, def, speed, height, weight, types } = req.body;
-
-  if(!name || !img || !hp || !str || !def || !speed || !height || !weight || !types )
+  const { name, image, hp, attack, defense, speed, height, weight, types } = req.body;
+  const str = attack
+  const def = defense
+  const img = image
+  if(!name || !img || !hp || !str || !def || !speed || !height || !weight) // || !types 
   return res.status(400).send('Missing required data!!')
 
   try {
       if (name) {
-      const allPokemons = await getPokemons();
-      //console.log(allPokemons);
+      const allPokemons = await getAllPokemons();
       const pokemon = allPokemons.find((e) => e.name == name.toLowerCase());
 
       if (!pokemon) {
@@ -29,12 +29,14 @@ router.post("/pokemons", async (req, res) => {
           weight,
         });
 
+
         const typeInDb = await Type.findAll({
           where: {
-            name: types,
+            id: types,
           },
         });
         pokemon.addType(typeInDb);
+
         return res.status(201).json(`The pokemon ${name} has been succesfully created, enjoy!!`);
       }
       return res.status(401).send("Name already exist!!");
