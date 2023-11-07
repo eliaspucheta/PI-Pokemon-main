@@ -11,7 +11,7 @@ const HomePage = () => {
       <ReloadBtn />
       <SelectFilters />
       <PokemonsContainer />
-      <Link to={"https://linktr.ee/rodrigospano"} target="_blank">
+      <Link to={"https://github.com/eliaspucheta"} target="_blank">
         <img id={Styles.gif} src="/assets/chill.gif" />
       </Link>
     </div>

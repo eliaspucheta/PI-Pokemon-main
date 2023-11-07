@@ -2,6 +2,10 @@
 import styles from "./subcomps.module.css";
 
 const ImageCont = ({ image, name, types, id }) => {
+  // console.log(image);
+   console.log(name);
+  // console.log(types);
+  // console.log(id);
   const findTypeFire = types.find((el) => el.name === "fire");
   const findTypeWater = types.find((el) => el.name === "water");
 

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect } from "react";
 import styles from "./detailPage.module.css";
 import { useParams } from "react-router-dom";

@@ -5,7 +5,7 @@ const { API_INFO } = process.env;
 let getApiInfo = async () => {
   try {
     let pokemones = [];
-    let url = "https://pokeapi.co/api/v2/pokemon";
+    let url = "https://pokeapi.co/api/v2/pokemon/";
     do {
       let info = await axios(url);
       let pokemonesFromApi = info.data;
@@ -15,10 +15,10 @@ let getApiInfo = async () => {
           url: e.url,
         };
       });
-      console.log(pokemones);
+      //console.log(pokemones);
       pokemones.push(...auxPokemones);
       url = pokemonesFromApi.next;
-    } while (API_INFO !== null && pokemones.length <= 40);
+    } while (API_INFO !== null && pokemones.length <= 190);
 
     let pokeData = await Promise.all(
       pokemones.map(async (e) => {
@@ -50,11 +50,14 @@ let getApiInfo = async () => {
 
 async function getPokemonDetail(arg) {
   try {
+    //realizo la peticion agregando el documento que envian por parametro
     const apiData = await axios(`https://pokeapi.co/api/v2/pokemon/${arg}`);
+    //si retorna undef apiData toma el valor de el controlador por id 
     if (apiData === undefined) {
       apiData = pokemonByIdDB(arg)
     }
     const data = apiData.data;
+    //selecciono el resultado de la peticion y guardo la info del pokemon
     const pokemonData = {
       id: data.id,
       name: data.name,
@@ -72,13 +75,15 @@ async function getPokemonDetail(arg) {
       height: data.height,
       weight: data.weight,
     };
+    //retorno el pokemon con sus detalles
     return pokemonData;
   } catch (e) {
     return e;
   }
 }
-
+//buscar por id en mi db
 const pokemonByIdDB = async (id) => {
+  //
   const findPokemon = await Pokemon.findByPk(id, {
     include: {
       model: Type,
@@ -103,9 +108,11 @@ const getDbInfo = async () => {
   });
 };
 
+//utilizo esta fn para agrupar los pokemones de la api y de mi db
 let getAllPokemons = async () => {
   let apiInfo = await getApiInfo();
   let dbInfo = await getDbInfo();
+  //guardo todos los pokemones en una variable y los retorno
   const allPokemon = apiInfo.concat(dbInfo);
 
   return allPokemon;

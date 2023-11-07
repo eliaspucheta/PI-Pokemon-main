@@ -1,3 +1,5 @@
+https://github.com/leandrofiadone/Pokemon-PI/blob/main/api/src/utils/Globales.js
+
 Enunciado general:
 -buscar pokemones✔
 -visualizar info✔
@@ -11,7 +13,7 @@ Endpoints:
 -type✔
 
 agregar comentarios
-2cambiar todo el diseño UI/UX
+2cambiar todo el diseño UI/UX	
 
 3arreglar funcionar para buscar en la bd
 
@@ -39,7 +41,7 @@ debe buscar en la api y db ✔
 recibir todos los datos necesarios ✔
 recibir la info por body ✔
 crear un pokemon en la base de la db y
-relacionar sus tipos ...
+relacionar sus tipos ...✔
 
 -get /types 
 obtiene un arreglo con todos los tipos de pokemons✔

@@ -30,7 +30,7 @@ router.get('/:name', async (req, res) => {
   //extraigo el id que envian por parametro
   const id = req.params.name;
   
-  let allPokemons = await getPokemonDetail(id)
+  let allPokemons = await getPokemonDetail(Number(id))
 
   try {
     //verifico que este parametro tenga valor
