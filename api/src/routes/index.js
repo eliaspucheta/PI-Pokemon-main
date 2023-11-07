@@ -13,4 +13,4 @@ router.use('/types', getPokemonsType)
 router.post('/pokemons', postPokemons)
 
 
-module.exports = router
+module.exports = router;
