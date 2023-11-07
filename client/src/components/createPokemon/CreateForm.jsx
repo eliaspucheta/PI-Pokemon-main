@@ -4,7 +4,7 @@ import styles from "./create.module.css";
 import InputsContainer from "./subcomps/InputsContainer";
 import TypesInput from "./subcomps/TypesInput";
 import Previsual from "./subcomps/Previsual";
-import SelectedTypes from "./subcomps/selectedTypes";
+import SelectedTypes from "./subcomps/SelectedTypes";
 
 const CreateForm = () => {
   const {

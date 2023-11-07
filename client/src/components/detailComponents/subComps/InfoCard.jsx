@@ -2,7 +2,7 @@
 import { MdHealthAndSafety } from "react-icons/md";
 import { GiPunchBlast } from "react-icons/gi";
 import { BsSpeedometer2, BsShieldShaded } from "react-icons/bs";
-import StatsGraph from "./statsGraph";
+import StatsGraph from "./StatsGraph";
 import styles from "./subcomps.module.css";
 
 const InfoCard = ({ pokemon }) => {
