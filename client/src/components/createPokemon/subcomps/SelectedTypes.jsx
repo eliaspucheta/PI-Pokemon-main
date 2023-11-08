@@ -1,7 +1,6 @@
 /* eslint-disable react/prop-types */
 import style from "./subcomps.module.css";
-import { useState } from "react";
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
 const SelectedTypes = ({ pokemon, handleDelete }) => {
