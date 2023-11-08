@@ -8,7 +8,7 @@ const CreatePokemonPage = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getTypesAction());
-  }, []);
+  }, [dispatch]);
   return (
     <div className={styles.pageCont}>
       <CreateForm />

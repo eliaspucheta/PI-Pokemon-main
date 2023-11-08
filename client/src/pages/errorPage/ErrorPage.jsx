@@ -5,7 +5,7 @@ const ErrorPage = () => {
   return (
     <div className={styles.container}>
       <img src="/assets/error.gif" />
-      <h6>page not found!</h6>
+      <h6>Error 404 Not Found</h6>
       <Link to="/home">back home</Link>
     </div>
   );

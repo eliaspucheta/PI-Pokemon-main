@@ -24,7 +24,7 @@ const PokemonsContainer = () => {
     } else {
       setLoader(false);
     }
-  }, []);
+  }, [pokemonGlobal, dispatch]);
 
   return (
     <div className={styles.container}>
