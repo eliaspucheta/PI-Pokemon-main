@@ -19,4 +19,5 @@ const Range = ({ title, handleChange, value }) => {
   );
 };
 
+
 export default Range;
