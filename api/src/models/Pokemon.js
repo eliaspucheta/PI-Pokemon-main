@@ -16,7 +16,7 @@ module.exports = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      img: {
+      image: {
         type: DataTypes.STRING,
         allowNull: true,
       },
@@ -24,11 +24,11 @@ module.exports = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      str: {
+      attack: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
-      def: {
+      defense: {
         type: DataTypes.INTEGER,
         allowNull: false,
       },

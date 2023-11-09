@@ -6,10 +6,8 @@ const router = Router();
 
 router.post("/pokemons", async (req, res) => {
   const { name, image, hp, attack, defense, speed, height, weight, types } = req.body;
-  const str = attack
-  const def = defense
-  const img = image
-  if(!name || !img || !hp || !str || !def || !speed || !height || !weight) // || !types 
+  
+  if(!name || !image || !hp || !attack || !defense || !speed || !height || !weight)
   return res.status(400).send('Missing required data!!')
 
   try {
@@ -20,10 +18,10 @@ router.post("/pokemons", async (req, res) => {
       if (!pokemon) {
         const pokemon = await Pokemon.create({
           name,
-          img,
+          image,
           hp,
-          str,
-          def,
+          attack,
+          defense,
           speed,
           height,
           weight,
