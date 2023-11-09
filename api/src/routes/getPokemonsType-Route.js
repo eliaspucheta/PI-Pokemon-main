@@ -10,20 +10,11 @@ router.get("/", async (req, res) => {
     let typeFromApi = await axios("https://pokeapi.co/api/v2/type");
     //selecciono la parte que necesito, generalmente es data
     let typeFromApiData = typeFromApi.data;
-
+    
+    //hago un mapeo de los resultados para filtrarlos por nombre
     let types = typeFromApiData.results.map((type) => {
         return { name: type.name };
       });
-
-    //hago un mapeo de los resultados para filtrarlos por nombre
-    //let types = await typeFromApiData.results
-        //.map((e) => e.name);
-
-    // for (let type of types) {
-    //     //const typeData = await axios(type.url)
-    //     delete type.url
-    //     //type.id = typeData.data.id
-    //   }
 
     //los busco/creo en mi base de datos
     await types.forEach((type) => {

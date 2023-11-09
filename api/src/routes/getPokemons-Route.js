@@ -35,9 +35,7 @@ router.get('/:name', async (req, res) => {
   try {
     //verifico que este parametro tenga valor
     if(allPokemons === undefined) {
-      //let pokeById = allPokemons.filter(e => e.id == id)
-      //retorno la respuesta
-      //pokeById.length ? res.status(200).json(pokeById) : res.status(404).send('Pokemon not found!!')
+      //retorno el error
       return res.status(400).json({ error: 'ID has not been provided!!'})
     }
     //si no recibo el id simplemente retorno un error
