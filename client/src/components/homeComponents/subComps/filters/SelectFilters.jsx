@@ -35,8 +35,8 @@ const SelectFilters = () => {
           </option>
           <option value={"aZ"}>A-Z</option>
           <option value={"zA"}>Z-A</option>
-          <option value={"attackASC"}>Attack-asc</option>
-          <option value={"attackDSC"}>Attack-des</option>
+          <option value={"attackASC"}>Attack-des</option>
+          <option value={"attackDSC"}>Attack-asc</option>
         </select>
 
         {/* API OR DB */}
