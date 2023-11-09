@@ -4,7 +4,7 @@ import Styles from "./LandingComponents.module.css";
 const HomeButton = () => {
   return (
     <Link className={Styles.btn} to={"/home"}>
-      <p>Lets Begin!</p>
+      <p>Lets Go!</p>
     </Link>
   );
 };

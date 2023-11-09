@@ -32,11 +32,11 @@ const InfoHeader = ({
       </div>
       <div className={styles.otherInfo}>
         <div>
-          <span>weight:</span>
+          <span>Weight: </span>
           <p>{pokemon.weight}kg</p>
         </div>
         <div>
-          <span>height:</span>
+          <span>Height: </span>
           <p>{pokemon.height}</p>
         </div>
       </div>

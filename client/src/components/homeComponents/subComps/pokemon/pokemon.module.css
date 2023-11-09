@@ -137,6 +137,7 @@ color: white;
 .pokemonCard img {
   width: 205.17px;
   height: 205.17px;
+  border: 4px solid #e63946;
   object-fit: contain;
   background: rgb(241, 240, 240);
   border-radius: 5px;
@@ -200,8 +201,25 @@ color: white;
   justify-content: center;
   border-radius: 10px;
   transition: all 0.3s ease-in;
+  position: absolute;
 }
 
 .reloadBtn:hover {
   transform: scale(1.2);
+}
+
+.reloadBtnContent {
+  display: flex;
+  margin-left: 68px;
+  align-items: center;
+}
+
+.reloadBtnContent span {
+  color: #616161;
+  text-transform: uppercase;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  font-size: 17 px;
+  justify-content: auto;
+  margin-left: 10px;
 }

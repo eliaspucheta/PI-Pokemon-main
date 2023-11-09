@@ -27,7 +27,7 @@ const SelectFilters = () => {
   return (
     <div className={styles.filtersCont}>
       <div className={styles.container}>
-        <span className={styles.orderby}>order by</span>
+        <span className={styles.orderby}>order by:</span>
         {/* A-Z - ATTACK */}
         <select value={status.order} onChange={handleAttackAndAzOrder}>
           <option value={"default"} disabled>
@@ -50,7 +50,7 @@ const SelectFilters = () => {
         {/* TYPE */}
         <select value={status.types} onChange={handleFilterByType}>
           <option value="default" disabled>
-            types
+            TYPES
           </option>
           {filteredTypes.length
             ? filteredTypes.map((el) => (

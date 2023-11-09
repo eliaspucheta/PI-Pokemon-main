@@ -5,6 +5,8 @@
   gap: 20px;
   background-image: url('/assets/fondo3.jpg');
   background-size: contain;
+  background-attachment: fixed;
+  background-position-x: auto;
   min-height: 100vh;
   padding-bottom: 20px;
   overflow-x: hidden;
