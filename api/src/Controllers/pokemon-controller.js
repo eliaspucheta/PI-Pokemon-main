@@ -18,7 +18,7 @@ let getApiInfo = async () => {
       //console.log(pokemones);
       pokemones.push(...auxPokemones);
       url = pokemonesFromApi.next;
-    } while (API_INFO !== null && pokemones.length <= 190);
+    } while (API_INFO !== null && pokemones.length <= 50);
 
     let pokeData = await Promise.all(
       pokemones.map(async (e) => {

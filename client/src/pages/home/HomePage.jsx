@@ -4,6 +4,7 @@ import PokemonsContainer from "../../components/homeComponents/pokemonsContainer
 import SelectFilters from "../../components/homeComponents/subComps/filters/SelectFilters";
 import { Link } from "react-router-dom";
 import ReloadBtn from "../../components/homeComponents/subComps/pokemon/ReloadBtn";
+import HomeBtn from "../../components/homeComponents/subComps/btn/HomeBtn";
 
 const HomePage = () => {
   return (

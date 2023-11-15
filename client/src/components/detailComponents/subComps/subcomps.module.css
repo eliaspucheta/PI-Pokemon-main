@@ -1,5 +1,6 @@
 .imageContainer {
   border-radius: 5px;
+  border: 4px solid #dc7600;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
