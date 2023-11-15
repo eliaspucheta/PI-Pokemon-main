@@ -29,6 +29,7 @@ const useCreatePokemon = () => {
 
     if (poke.name.length < 3) validationErrors.name = "Name must be longer.";
     if (poke.name.length > 15) validationErrors.name = "Name is to long.";
+    if (poke.name === poke.name.toUpperCase()) validationErrors.name = "Name contains all characters in uppercase."
     if (!nameRegex.test(poke.name))
       validationErrors.name = "name cannot have numbers or symbols.";
     if (!urlRegex.test(poke.image) || !urlImageRegex.test(poke.image))

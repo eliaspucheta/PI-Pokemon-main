@@ -12,11 +12,10 @@ const ReloadBtn = () => {
 
   return (
     <div className={style.reloadBtn}>
-
-    <div onClick={handleBtn} className={style.reloadBtnContent}>
-      <AiOutlineReload />
-      <span>Reload</span>
-    </div>
+      <div onClick={handleBtn} className={style.reloadBtnContent}>
+        <AiOutlineReload />
+        <span>Reload</span>
+      </div>
     </div>
   );
 };

@@ -29,7 +29,7 @@ Rutas-Back:
   tiene qeu incluir los datos del tipo✔
   de pokemon
   debe funcionar para los pokemons de la base
-  de datos y de la api X
+  de datos y de la api ✔
 
 -/pokemons/name?
 obtener los pokemons que coinciden con el nombre ✔
@@ -70,7 +70,7 @@ Form Page:
 completar detalles del pokemon✔
 el nombre del pokemon no puede tener nums✔
 la def no puede exceder determinado valor✔
-crear mi propia validacion X
+crear mi propia validacion ✔
 
 Testing:	
 

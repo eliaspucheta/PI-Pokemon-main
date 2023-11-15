@@ -29,9 +29,8 @@ router.get('/', async (req, res) => {
 router.get('/:name', async (req, res) => {
   //extraigo el id que envian por parametro
   const id = req.params.name;
-  
-  let allPokemons = await getPokemonDetail(Number(id))
-
+  let allPokemons = await getPokemonDetail(id)
+console.log(allPokemons);
   try {
     //verifico que este parametro tenga valor
     if(allPokemons === undefined) {

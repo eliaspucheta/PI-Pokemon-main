@@ -18,7 +18,7 @@ let getApiInfo = async () => {
       //console.log(pokemones);
       pokemones.push(...auxPokemones);
       url = pokemonesFromApi.next;
-    } while (API_INFO !== null && pokemones.length <= 50);
+    } while (API_INFO !== null && pokemones.length <= 90);
 
     let pokeData = await Promise.all(
       pokemones.map(async (e) => {
@@ -26,11 +26,11 @@ let getApiInfo = async () => {
         return {
           id: pokemon.data.id,
           name: pokemon.data.name,
-          img: pokemon.data.sprites.other.home.front_default,
+          image: pokemon.data.sprites.other.home.front_default,
           types: pokemon.data.types.map((e) => {
             return {
               name: e.type.name,
-              img: `https://typedex.app/images/ui/types/dark/${e.type.name}.svg`,
+              image: `https://typedex.app/images/ui/types/dark/${e.type.name}.svg`,
             };
           }),
           hp: pokemon.data.stats[0].base_stat,
@@ -48,24 +48,42 @@ let getApiInfo = async () => {
   }
 };
 
+//buscar por id en mi db
+const pokemonByIdDB = async (id) => {
+  //
+   const findPokemon = await Pokemon.findByPk(id, {
+     include: {
+       model: Type,
+       attributes: ["name"],
+       through: { 
+         attributes: [] 
+       },
+     },
+   });
+   if (findPokemon) return findPokemon;
+};
+
 async function getPokemonDetail(arg) {
   try {
+    const isUUID = /^[0-9a-fA-F]{8}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{4}\b-[0-9a-fA-F]{12}$/.test(arg)
+
+    if(isUUID) {
+      const pokeInDb = await pokemonByIdDB(arg)
+      return pokeInDb
+    }
     //realizo la peticion agregando el documento que envian por parametro
     const apiData = await axios(`https://pokeapi.co/api/v2/pokemon/${arg}`);
     //si retorna undef apiData toma el valor de el controlador por id 
-    if (apiData === undefined) {
-      apiData = pokemonByIdDB(arg)
-    }
     const data = apiData.data;
     //selecciono el resultado de la peticion y guardo la info del pokemon
     const pokemonData = {
       id: data.id,
       name: data.name,
-      img: data.sprites.other.home.front_default,
+      image: data.sprites.other.home.front_default,
       types: data.types.map((e) => {
         return {
           name: e.type.name,
-          img: `https://typedex.app/images/ui/types/dark/${e.type.name}.svg`,
+          image: `https://typedex.app/images/ui/types/dark/${e.type.name}.svg`,
         };
       }),
       hp: data.stats[0].base_stat,
@@ -81,20 +99,7 @@ async function getPokemonDetail(arg) {
     return e;
   }
 }
-//buscar por id en mi db
-const pokemonByIdDB = async (id) => {
-  //
-   const findPokemon = await Pokemon.findByPk(id, {
-     include: {
-       model: Type,
-       attributes: ["name"],
-       through: { 
-         attributes: [] 
-       },
-     },
-   });
-   if (findPokemon) return findPokemon;
-};
+
 
 const getDbInfo = async () => {
   return await Pokemon.findAll({

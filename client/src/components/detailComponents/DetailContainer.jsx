@@ -5,11 +5,11 @@ import InfoContainer from "./subComps/InfoContainer";
 import { Link } from "react-router-dom";
 
 const DetailContainer = ({ pokemon, setPokemon }) => {
-  //console.log(pokemon);
+  console.log(pokemon);
   return (
     <div className={styles.container}>
       <ImageCont
-        image={pokemon.img}
+        image={pokemon.image}
         types={pokemon.types}
         name={pokemon.name}
         id={pokemon.id}

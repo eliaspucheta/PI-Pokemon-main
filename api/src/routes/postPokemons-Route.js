@@ -6,7 +6,6 @@ const router = Router();
 
 router.post("/pokemons", async (req, res) => {
   const { name, image, hp, attack, defense, speed, height, weight, types } = req.body;
-  
   if(!name || !image || !hp || !attack || !defense || !speed || !height || !weight)
   return res.status(400).send('Missing required data!!')
 
@@ -41,6 +40,7 @@ router.post("/pokemons", async (req, res) => {
     }
     return res.status(401).send("Pokemon name is obligatory!!");
   } catch (error) {
+    console.log(error);
     return res.status(400).json({ Error: error.message });
   }
 });

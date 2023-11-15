@@ -25,7 +25,7 @@ const PokemonCard = ({ pokemon }) => {
       )}
       <img
         onClick={() => navigate(`/pokemon/${pokemon.id}`)}
-        src={pokemon.img}
+        src={pokemon.image}
         alt={pokemon.name}
       />
       <div className={styles.infoCont}>

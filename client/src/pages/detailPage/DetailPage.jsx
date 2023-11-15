@@ -12,7 +12,7 @@ const DetailPage = () => {
 
   const handleState = async (pokeId) => {
     const poke = await getPokemonByIdReq(pokeId);
-    console.log(poke);
+    //console.log(poke);
     setPokemon(poke);
   };
 
