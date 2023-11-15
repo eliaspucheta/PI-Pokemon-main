@@ -6,7 +6,7 @@ const InputsContainer = ({ handleChange, pokemon }) => {
   return (
     <div className={styles.inputsContainer}>
       <div className={styles.nameInput}>
-        <label>name</label>
+        <label>Name</label>
         <input
           name="name"
           onChange={handleChange}
@@ -16,7 +16,7 @@ const InputsContainer = ({ handleChange, pokemon }) => {
         />
       </div>
       <div className={styles.nameInput}>
-        <label>image</label>
+        <label>Image</label>
         <input
           name="image"
           onChange={handleChange}
