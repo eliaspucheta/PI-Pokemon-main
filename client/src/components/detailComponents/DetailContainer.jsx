@@ -5,6 +5,7 @@ import InfoContainer from "./subComps/InfoContainer";
 import { Link } from "react-router-dom";
 
 const DetailContainer = ({ pokemon, setPokemon }) => {
+  //console.log(pokemon);
   return (
     <div className={styles.container}>
       <ImageCont

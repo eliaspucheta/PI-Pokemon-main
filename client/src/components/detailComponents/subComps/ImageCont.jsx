@@ -1,11 +1,16 @@
 /* eslint-disable react/prop-types */
 import styles from "./subcomps.module.css";
+//import { useState, useEffect } from "react";
 
 const ImageCont = ({ image, name, types, id }) => {
    //console.log(image);
    //console.log(types);
-   const findTypeFire = types.find((el) => el.name === "fire");
-   const findTypeWater = types.find((el) => el.name === "water");
+  //  const [pokemonDetails, setPokemonDetails] = useState(null);
+  //  const [loading, setLoading] = useState(true);
+  //  const [error, setError] = useState(null);
+ 
+   const findTypeFire = types && types.find((el) => el.name === "fire");
+   const findTypeWater = types && types.find((el) => el.name === "water");
    
     let bgImgDefiner = findTypeFire
     ? styles.bgImg1

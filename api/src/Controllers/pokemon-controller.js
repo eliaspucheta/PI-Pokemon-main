@@ -84,16 +84,16 @@ async function getPokemonDetail(arg) {
 //buscar por id en mi db
 const pokemonByIdDB = async (id) => {
   //
-  const findPokemon = await Pokemon.findByPk(id, {
-    include: {
-      model: Type,
-      attributes: ["name"],
-      through: { 
-        attributes: [] 
-      },
-    },
-  });
-  if (findPokemon) return findPokemon;
+   const findPokemon = await Pokemon.findByPk(id, {
+     include: {
+       model: Type,
+       attributes: ["name"],
+       through: { 
+         attributes: [] 
+       },
+     },
+   });
+   if (findPokemon) return findPokemon;
 };
 
 const getDbInfo = async () => {
